@@ -1,0 +1,155 @@
+
+
+$height-background:120vh;
+
+
+
+.background{
+    background-image: url(https://petcdnstore.blob.core.windows.net/csp-preprod-assets/1017/wow-background-image-all.jpg);
+    min-height: $height-background;
+    width: auto;
+    position: relative;
+    background-size: cover;
+    background-position: center top;
+    z-index: 1;
+}
+.mypets-modal-button.mypets-modal-button--green, .mypets-modal-button--green.mypets-main__button {
+    background-color: #008a00;
+    color: #fff;
+}
+.mypets-modal-button, .mypets-main__button {
+    padding: 20px 25px;
+    border: 1px solid #e0e0e0;
+    font-weight: 600;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 1em;
+    background-color: #eee;
+    text-align: center;
+    color: #666;
+    height: 60px;
+    min-width: 170px;
+    cursor: pointer;
+}
+
+
+.mypets-modal-button:hover, .mypets-main__button:hover {
+    border: 1px solid #a5c84d;
+    -webkit-box-shadow: 2px 2px 6px #ddd;
+    -moz-box-shadow: 2px 2px 6px #ddd;
+    box-shadow: 2px 2px 6px #ddd;
+    background-color: #a5c84d;
+    color: #008a00;
+}
+
+
+.mypets-modal-button  {
+    border: 1px solid #fff;
+    -webkit-box-shadow: 2px 2px 6px #ddd;
+    -moz-box-shadow: 2px 2px 6px #ddd;
+    box-shadow: 2px 2px 6px #ddd;
+    background-color: white;
+    color: #008a00;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+
+  @media only screen and (max-width: 600px) {
+    .container-large{
+       
+        display: none;
+    }
+
+    .button-large{
+        min-width: 70%;
+    }
+    .cardUser{
+        display: block;
+        width: 100%
+    }
+  } 
+
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+.container-large{
+    display: block;
+  
+}
+.button-large{
+    min-width: 70%;
+}
+
+.cardUser{
+    display: none;
+}
+  } 
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .container-large{
+        display: block;
+       
+    }
+    .cardUser{
+        display: none;
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .container-large{
+        display: block;
+        
+    }
+
+    .cardUser{
+        display: none;
+    }
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .container-large{
+        display: block;
+    }
+    .cardUser{
+        display: none;
+    }
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 2px 16px;
+}
+  

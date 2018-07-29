@@ -1,0 +1,66 @@
+
+<div  style="background-color:#eee; padding-top:30px;">
+        <h3  style="color:#008a00; font-weight:bold; margin-left:5%">Login</h2>
+        
+       
+
+
+       
+                <div ng-controller="login-form">
+                    <div class="alert alert-danger text-center" ng-if="loginFail">Invalid Username  or Password  </div>
+
+                  <div class="row" >
+                        <div class="  col-12 col-sm-6 col-lg-6 col-xl-6" >
+                              <div style="margin-left:6%">
+                                      <div style="color:#39464e;font-size: 1em; line-height: 1.2em; margin-top:20px;">Email or policy number</div>
+                                    <br>
+                                      <input type="text" ng-model="username" style="height:50px; width:90%; font-size:1.5em; padding:10px; border:black 0px solid">
+                                  <br>   <br>
+                                  
+
+
+                              </div>
+                      </div>
+                        <div class="  col-12 col-sm-6 col-lg-6 col-xl-6">
+                              <div style="margin-left:6%">
+                                      <div style="color:#39464e;font-size: 1em; line-height: 1.2em; margin-top:20px;">Password</div>
+                                      <br>
+                                        <input type="password" ng-model="password"   style="height:50px;width:90%; font-size:1.5em; padding:10px; border:black 0px solid">
+                                        <br>   <br>
+
+                    
+                                      
+                              </div>
+                        </div>
+                </div>
+                  <div >
+                
+                    <div style="margin-left:6%;float:left">
+                            <div class="checkbox">
+                                    <label><input type="checkbox" value="">Remember</label>
+                             </div>
+                                  <br>   <br>
+                        </div>
+                              <div class="text-center" style="float:right;margin-right:10%" >
+                                <div>  <a >Forgot password</a></div> 
+                                  <br>   <br> 
+                            </div>
+              </div>
+                <div style="clear:both"></div>
+
+              <div class="row">
+                <div class="col-12 col-sm-6 col-lg-6 col-xl-6 text-center">
+                    <button class="mypets-modal-button  button-large" type="button" data-toggle="modal" data-target="#edit">Sign up</button>
+
+                </div>
+                <div class="col-12 col-sm-6 col-lg-6 col-xl-6 text-center">
+                    <button id="login-submit" ng-click="login()" class="mypets-modal-button mypets-modal-button--green button-large" type="button">Login</button>
+
+                </div>
+              </div>
+
+           
+                <br>   <br> <br>   <br> 
+
+</div>
+

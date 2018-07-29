@@ -1,0 +1,28 @@
+
+
+<div>
+<div class="row" style="border-bottom:black 2px solid;">
+    <div class="col-8">
+<img style="width:30%; height:auto;" src="https://petcdnstore.blob.core.windows.net/csp-preprod-assets/1016/header.png"/>
+    </div>
+    <div class="col-4">
+
+    </div>
+</div>
+
+<div class="container" ng-controller="detail">
+   <div style="float:right; margin-top: 30px;">
+       <button class="btn btn-success  " style="width:100px;" >View</button>
+       <button class="btn btn-success  " ng-click="add()"  data-toggle="modal" data-target="#edit" style="width:100px; margin-left:10px;">Add</button>
+</div> 
+</div>
+  <br>  <br>  <br>  <br>
+  <div class="container" >
+<div ng-include="'./components/detail/users.html'"></div>
+</div>
+</div>
+
+
+
+
+   

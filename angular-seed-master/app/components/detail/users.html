@@ -1,0 +1,49 @@
+<div ng-controller="table">
+
+<div class="container-large">
+
+<table class="table " >
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th><div class="text-center">Action</div></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="user in users">
+                <td>{{$index}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            <td><div class="text-center">
+                <span><button class="btn btn-primary" ng-click="edit($index)" data-toggle="modal" data-target="#edit">Edit</button></span>
+                <span><button class="btn btn-danger" ng-click="remove($index)" data-toggle="modal" data-target="#confirm">remove</button></span>
+            </div></td>
+          </tr>
+       
+        </tbody>
+      </table>
+
+   
+
+    </div>
+    <div ng-include="'./components/detail/modalInfo.html'"></div>
+    <div ng-include="'./components/detail/modalConfirm.html'"></div>
+    <div class="cardUser " >
+   
+      <div  ng-repeat="user in users" class="card" style="width:100%">
+          <div class="text-center">Username : {{user.username}}</div>
+          <div class="text-center">Email : {{user.email}}</div>
+          <div class="text-center">Role : {{user.role}}</div>
+          <div class="container">
+            <div class="text-center">
+              <span><button class="btn btn-primary" ng-click="edit($index)" data-toggle="modal" data-target="#edit">Edit</button></span>
+              <span><button class="btn btn-danger" ng-click="remove($index)" data-toggle="modal" data-target="#confirm">remove</button></span>
+          </div>
+          </div>
+        </div>
+  </div>
+</div>
