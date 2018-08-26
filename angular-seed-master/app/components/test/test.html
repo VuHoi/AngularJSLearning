@@ -1,0 +1,20 @@
+<div ng-controller="test">
+    <button ng-click="click()">aaa</button>
+        <form name="myForm">
+                <!-- ng-maxlength="5" ng-minlength="3" -->
+      <div class="form-group">
+          <label for="myInput">{{test}}
+              <td><input id="myInput" name="myInput" 
+                   class="form-control" data-ng-model="test" data-ng-value="test" 
+                   ng-maxlength="5" ng-minlength="3" ng-pattern="/[0-9]+/g"
+                   popover-is-open="myForm.myInput.$invalid && myForm.myInput.$touched" uib-popover="tooltip show here " popover-placement="bottom"
+                  ng-blur="onBlurClock(myForm.myInput)" 
+                     /></td>
+                
+          </label>
+      </div>
+    </form>
+
+<br><br><br><br><br>
+
+    </div>

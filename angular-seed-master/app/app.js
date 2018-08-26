@@ -2,8 +2,9 @@
 
 angular.module('routingDemoApp',[
 	'ui.router',
-	'detail',
-	'login'
+	// 'detail',
+	'login',
+	'ui.bootstrap'
 ])
 
 
@@ -15,37 +16,38 @@ angular.module('routingDemoApp',[
 				$stateProvider
 						.state('login', {
 							url: "/",
-							templateUrl: "./components/login/login.html",
+							templateUrl: "./components/test/test.html",
 							
 						})
-						.state('detail', {
-							url: "/detail",
-							templateUrl: "./components/detail/detail.html",
-							resolve: {
-								delay: function($q, $timeout) {
-								  var delay = $q.defer();
-								  $timeout(delay.resolve, 1000);
-								  return delay.promise;
-								}
-							  }
-						})
+						// .state('detail', {
+						// 	url: "/detail",
+						// 	templateUrl: "./components/detail/detail.html",
+						// 	resolve: {
+						// 		delay: function($q, $timeout) {
+						// 		  var delay = $q.defer();
+						// 		  $timeout(delay.resolve, 1000);
+						// 		  return delay.promise;
+						// 		}
+						// 	  }
+						// }).
+						
 						
 					
 						$locationProvider.html5Mode(true).hashPrefix('!');
 					
 			}])
-.run(function($rootScope,$transitions) {
-	$rootScope.logged=false;
-	$transitions.onStart({ }, function(trans) {
-		$rootScope.logged=true;
-	}
-	)
+// .run(function($rootScope,$transitions) {
+// 	$rootScope.logged=false;
+// 	$transitions.onStart({ }, function(trans) {
+// 		$rootScope.logged=true;
+// 	}
+// 	)
 
-	$transitions.onSuccess({}, function() {
-		$rootScope.logged=false;
-	  });
+// 	$transitions.onSuccess({}, function() {
+// 		$rootScope.logged=false;
+// // 	  });
 	  
-}).controller('app',function($rootScope){
+.controller('app',function($rootScope){
 	$rootScope.title="Sign In"
 })
 
