@@ -1,0 +1,33 @@
+<div style="width: 320px" >
+    <button class="form-control text-left"  ng-click="toggle()"   ng-bind="selectedDate|date:'dd/MM/yyyy'"></button>
+    <div  ng-show="isOpen" ng-blur="toggle()" tabindex="-1" id="menu">
+        <div class="row backgroundHeader">
+            <div class="col-2">
+                <button ng-click="prev()"  ><</button>
+            </div>
+            <div class="col-8">
+                <button class=" w-100" ng-click="toggleMonth()" ng-bind="monthNames[month]+' '+ year"></button>
+            </div>
+            <div class="col-2">
+                <button ng-click="next()">></button>
+            </div>
+        </div>
+
+        <div ng-switch="switchMonth">
+
+            <div ng-switch-when="true" class="inline-block">
+                <button class="float-left division">Su</button>
+                <button class="float-left division">Mo</button>
+                <button class="float-left division">Tu</button>
+                <button class="float-left division">We</button>
+                <button class="float-left division">Th</button>
+                <button class="float-left division">Fr</button>
+                <button class="float-left division">Sa</button>
+                <button class="float-left division" ng-disabled="date.getMonth()!==month"  ng-click="selected(date)" ng-repeat="date in dates track by $index">{{date|date:'d'}}</button>
+            </div>
+            <div ng-switch-when="false" class="inline-block" >
+                <button class="float-left divisionThree"  ng-click="selectedMonth($index)" ng-repeat="month in monthNames track by $index">{{month}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,20 +1,25 @@
-<div ng-controller="test">
-    <button ng-click="click()">aaa</button>
-        <form name="myForm">
-                <!-- ng-maxlength="5" ng-minlength="3" -->
-      <div class="form-group">
-          <label for="myInput">{{test}}
-              <td><input id="myInput" name="myInput" 
-                   class="form-control" data-ng-model="test" data-ng-value="test" 
-                   ng-maxlength="5" ng-minlength="3" ng-pattern="/[0-9]+/g"
-                   popover-is-open="myForm.myInput.$invalid && myForm.myInput.$touched" uib-popover="tooltip show here " popover-placement="bottom"
-                  ng-blur="onBlurClock(myForm.myInput)" 
-                     /></td>
-                
-          </label>
-      </div>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./components/test/test.css" ></link>
 
-<br><br><br><br><br>
+</head>
+<body>
+    <div ng-controller="test">
+        <date-picker-popup ></date-picker-popup>
+        </div>
+</body>
+</html>
 
-    </div>
+
+
+

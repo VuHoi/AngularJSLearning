@@ -4,35 +4,97 @@
     
 angular.module('login',[])
 .run(function(){
-    String.prototype.splice = function(idx, rem, str) {
-        return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+    Date.prototype.addDays = function(days) {
+        var date = new Date(this.valueOf());
+        date.setDate(date.getDate() + days);
+        return date;
     }
 })
+
+.directive('datePickerPopup',function(){
+return {
+    restrict:'E',
+    scope:{
+        // selectedDate:'='
+    },
+    templateUrl:"./components/test/dateTime.html",
+   
+    link:function(scope,element,attrs){
+        scope.monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+        scope.switchMonth=true;
+        scope.selectedDate= new Date();
+        scope.dates=[];
+        scope.month=(scope.selectedDate).getMonth();
+        scope.year=(scope.selectedDate).getFullYear();
+        scope.isOpen=false;
+        scope.toggle=function(){
+            scope.isOpen=!scope.isOpen; console.log((scope.isOpen))
+        };
+        scope.toggleMonth=function(){
+            scope.switchMonth=!scope.switchMonth;
+        }
+
+        scope.selectedMonth=function (month) {
+            scope.month=month;
+            scope.toggleMonth();
+            addDates(scope.month,scope.year);
+        }
+        scope.selected=function(date){
+            scope.selectedDate=date;
+            scope.toggle();
+
+        };
+        scope.next=function () {
+           if(scope.month===11){
+               scope.month=0;
+               scope.year=scope.year+1;
+           }
+           else{
+               scope.month=scope.month+1;
+           }
+            addDates(scope.month,scope.year);
+            console.log(scope.month)
+        }
+
+        scope.prev=function () {
+            if(scope.month===0){
+                scope.month=11;
+                scope.year=scope.year-1;
+            }
+            else{
+                scope.month=scope.month-1;
+            }
+            addDates(scope.month,scope.year);
+            console.log(scope.month)
+        }
+        function addDates(month,year){
+            scope.dates=[];
+            var firstDateOfMonth=new Date(year,month,1)
+            let dateOfWeek=firstDateOfMonth.getDay();
+            firstDateOfMonth =firstDateOfMonth.addDays(-dateOfWeek);
+            var startDate=firstDateOfMonth;
+
+            for(let i=0;i<42;i++){
+                scope.dates.push(startDate);
+                startDate= startDate.addDays(1);
+            }
+
+        }
+        addDates(scope.month,scope.year)
+    }
+}
+
+})
+
+
  .controller('test', function($scope,$rootScope) {
-     $scope.test=" ";
-     $scope.open=false;
- $scope.onBlurClock=function(a){
-let length=($scope.test+'').length;
-
- if(length<5&&a.$valid){
-     if(length===3)$scope.test ='0'+$scope.test;
-     $scope.test =($scope.test+'').splice(2, 0, ":");
- }
-console.log(a);
- }
-
-//  $scope.$watch('test', function(newValue, oldValue) {
-//     $scope.change();
-//   });
-
- $scope.click=function(){
-    $scope.test=$scope.test+1;  
-  
- }
-
-
-//  $scope.change=function(){
-//      console.log($scope.test)
-//  }
-
+    $scope.date="sss"
+    console.log($scope.date)
  })
+
+
