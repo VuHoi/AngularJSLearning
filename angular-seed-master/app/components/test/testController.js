@@ -26,14 +26,21 @@ return {
             "August", "September", "October",
             "November", "December"
         ];
+        scope.monthNames1 = [
+            "Jan", "Feb", "Mar",
+            "Apr", "May", "Jun", "Jul",
+            "Aug", "Sep", "Oct",
+            "Nov", "Dec"
+        ];
         scope.switchMonth=true;
         scope.selectedDate= new Date();
+        scope.today=new Date();
         scope.dates=[];
         scope.month=(scope.selectedDate).getMonth();
         scope.year=(scope.selectedDate).getFullYear();
         scope.isOpen=false;
         scope.toggle=function(){
-            scope.isOpen=!scope.isOpen; console.log((scope.isOpen))
+            scope.isOpen=!scope.isOpen;
         };
         scope.toggleMonth=function(){
             scope.switchMonth=!scope.switchMonth;
@@ -47,7 +54,6 @@ return {
         scope.selected=function(date){
             scope.selectedDate=date;
             scope.toggle();
-
         };
         scope.next=function () {
            if(scope.month===11){
@@ -58,7 +64,7 @@ return {
                scope.month=scope.month+1;
            }
             addDates(scope.month,scope.year);
-            console.log(scope.month)
+
         }
 
         scope.prev=function () {
@@ -70,8 +76,9 @@ return {
                 scope.month=scope.month-1;
             }
             addDates(scope.month,scope.year);
-            console.log(scope.month)
+
         }
+
         function addDates(month,year){
             scope.dates=[];
             var firstDateOfMonth=new Date(year,month,1)
@@ -85,6 +92,7 @@ return {
             }
 
         }
+
         addDates(scope.month,scope.year)
     }
 }

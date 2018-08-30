@@ -7,5 +7,49 @@
 }
 .backgroundHeader{
 background-color: #F0F0F0;
+    width: 320px;
+    height: 50px;
+}
+.row ,col-2{
+    margin: 0px !important;
+    padding: 0px !important;
 }
 
+.btnSmall{
+    background-color: #FFFFFF;
+    height: 30px;
+    color:#287ec8;
+}
+.btnSmall:hover{
+    border:  1px #287ec8 solid !important;
+}
+.btnDateOfWeek{
+    background-color: #FFFFFF;
+    height: 30px;
+    font-weight: bold;
+    border: none;
+}
+
+.btnDate{
+    background-color: #FFFFFF;
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.btnDate:hover{
+    border-top: 2px #287ec8 solid ;
+    background-color: #E6F3FF;
+}
+
+
+.btnMonth{
+    background-color: #FFFFFF;
+    border: none;
+    height: 40px;
+    font-weight: bold;
+}
+
+.active{
+    color: #287ec8;
+}

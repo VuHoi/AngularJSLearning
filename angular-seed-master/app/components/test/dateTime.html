@@ -1,33 +1,34 @@
 <div style="width: 320px" >
-    <button class="form-control text-left"  ng-click="toggle()"   ng-bind="selectedDate|date:'dd/MM/yyyy'"></button>
-    <div  ng-show="isOpen" ng-blur="toggle()" tabindex="-1" id="menu">
-        <div class="row backgroundHeader">
-            <div class="col-2">
-                <button ng-click="prev()"  ><</button>
+    <button id="button" class="form-control text-left"  ng-click="toggle()"   ng-bind="selectedDate|date:'dd/MM/yyyy'"></button>
+    <div  ng-show="isOpen" ng-blur="toggle()" tabindex="-1"  >
+      <div class="border-left" >
+        <div class="row backgroundHeader border-left border-right" >
+            <div class="col-2 mt-2 text-left">
+                <button  id="prev"  ng-click="prev()" class=" btnSmall border"  ><i class="fas fa-chevron-left"></i></button>
             </div>
-            <div class="col-8">
-                <button class=" w-100" ng-click="toggleMonth()" ng-bind="monthNames[month]+' '+ year"></button>
+            <div class="col-8 mt-2">
+                <button id="month" class=" w-100 border btnSmall" ng-click="toggleMonth()" style="height: 30px" ng-bind="monthNames[month]+' '+ year"></button>
             </div>
-            <div class="col-2">
-                <button ng-click="next()">></button>
+            <div class="col-2 text-right mt-2 ">
+                <button id="next" ng-click="next()"  class="btnSmall border"  > <i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
 
-        <div ng-switch="switchMonth">
-
-            <div ng-switch-when="true" class="inline-block">
-                <button class="float-left division">Su</button>
-                <button class="float-left division">Mo</button>
-                <button class="float-left division">Tu</button>
-                <button class="float-left division">We</button>
-                <button class="float-left division">Th</button>
-                <button class="float-left division">Fr</button>
-                <button class="float-left division">Sa</button>
-                <button class="float-left division" ng-disabled="date.getMonth()!==month"  ng-click="selected(date)" ng-repeat="date in dates track by $index">{{date|date:'d'}}</button>
+        <div ng-switch="switchMonth" class="border-left border-right border-bottom" >
+            <div ng-switch-when="true" class="inline-block border-left border-right border-bottom ">
+                <button id="su" class="float-left division  btnDateOfWeek">Su</button>
+                <button id="mo" class="float-left division  btnDateOfWeek">Mo</button>
+                <button id="tu" class="float-left division  btnDateOfWeek">Tu</button>
+                <button id="we" class="float-left division  btnDateOfWeek">We</button>
+                <button id="th" class="float-left division  btnDateOfWeek">Th</button>
+                <button id="fr" class="float-left division  btnDateOfWeek">Fr</button>
+                <button id="sa" class="float-left division  btnDateOfWeek">Sa</button>
+               <div ng-repeat="date in dates track by $index" class="division text-center float-left"><button  class=" btnDate " ng-class="{active:today.getDate() === date.getDate()&&today.getMonth() === date.getMonth()&&today.getFullYear() === date.getFullYear()}" ng-disabled="date.getMonth()!==month"  ng-click="selected(date)" >{{date|date:'d'}}</button></div>
             </div>
-            <div ng-switch-when="false" class="inline-block" >
-                <button class="float-left divisionThree"  ng-click="selectedMonth($index)" ng-repeat="month in monthNames track by $index">{{month}}</button>
+            <div ng-switch-when="false" class="inline-block border-left border-right border-bottom" >
+                <button class="float-left w-25 btnMonth"  ng-click="selectedMonth($index)" ng-class="{active:$index == today.getMonth()&& today.getFullYear()===year}" ng-repeat="month in monthNames1 track by $index">{{month}}</button>
             </div>
         </div>
+      </div>
     </div>
 </div>
